@@ -11,33 +11,21 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect: () => {
-      const urlObj = getUrlObj();
-      if (urlObj && urlObj.url) {
-        if (
-          document.documentElement.getAttribute('mode') !== 'popup' ||
-          urlObj.timestamp + 1000 * 60 * 60 * 1 > Date.now()
-        ) {
-          return urlObj.url;
-        }
-      }
-      return '/book/anime/1';
+      return '/settings/';
     },
   },
   {
     path: '/book/:type/:state',
     name: 'Bookmarks',
-    component: Bookmarks,
-    props: {
-      type: String,
-      state: Number,
+    redirect: () => {
+      return '/settings/';
     },
   },
   {
     path: '/:type/:slug',
     name: 'Overview',
-    component: Overview,
-    meta: {
-      key: true,
+    redirect: () => {
+      return '/settings/';
     },
   },
   {
@@ -47,20 +35,23 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/search',
-    redirect: '/search/anime',
+    redirect: () => {
+      return '/settings/';
+    },
   },
   {
     path: '/search/:type',
     name: 'Search',
-    component: Search,
-    props: {
-      type: String,
+    redirect: () => {
+      return '/settings/';
     },
   },
   {
     path: '/install',
     name: 'Install',
-    component: Install,
+    redirect: () => {
+      return '/settings/';
+    },
   },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ];

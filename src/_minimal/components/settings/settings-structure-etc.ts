@@ -13,37 +13,4 @@ export const etc: ConfObj[] = [
     },
     component: SettingsGeneral,
   },
-  {
-    key: 'cleanTagsUi',
-    title: () => api.storage.lang('settings_clean_tags_button'),
-    props: () => ({
-      type: 'button',
-      icon: '',
-      props: {
-        color: 'primary',
-        title: api.storage.lang('settings_clean_tags_button'),
-      },
-    }),
-    component: SettingsGroup,
-    children: [
-      {
-        key: 'cleanTags',
-        title: () => api.storage.lang('settings_clean_tags_button'),
-        component: SettingsClearTags,
-      },
-    ],
-  },
-  {
-    key: 'clearCache',
-    title: () => api.storage.lang('settings_ClearCache'),
-    props: () => ({
-      component: 'button',
-      props: {
-        color: 'primary',
-        title: api.storage.lang('settings_ClearCache'),
-        click: () => utils.clearCache(),
-      },
-    }),
-    component: SettingsGeneral,
-  },
 ];

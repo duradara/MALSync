@@ -1272,7 +1272,7 @@
         "description": "Form field title to enter the search url for manga"
     },
     "settings_tracking": {
-        "message": "Tracking",
+        "message": "Bilder",
         "description": "tracking settings header"
     },
     "settings_tracking_disabled": {

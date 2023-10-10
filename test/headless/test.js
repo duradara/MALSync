@@ -30,7 +30,7 @@ const mode = {
 
 if (process.env.CI && !changedFiles.length) mode.quiet = true;
 
-async function getBrowser(headless = true) {
+async function getBrowser(headless = false) {
   if (browser && headless) return browser;
   if (browserFull && !headless) return browserFull;
 
@@ -38,7 +38,7 @@ async function getBrowser(headless = true) {
   if (headless) {
     browser = tempBrowser;
   } else {
-    browserFull = tempBrowser;
+    browser = tempBrowser;
   }
   return tempBrowser;
 }
@@ -198,7 +198,7 @@ async function PreparePage(block, page, url) {
     await new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve();
-      }, 10000);
+      }, 3000);
     })
 
     const content = await page.content();
@@ -338,7 +338,7 @@ async function testPageCase(block, testPage, b) {
 }
 
 async function loopEl(testPage, headless = true) {
-  // if(testPage.title !== 'manganato') return;
+  // if(testPage.title !== 'LynxScans') return;
   if (!testPage.enabled && typeof testPage.enabled !== 'undefined') return;
   const b = await getBrowser(headless);
 
@@ -446,7 +446,7 @@ async function main() {
       await new Promise((resolve, reject) => {
         let int;
         int = setInterval(() => {
-          if (running < 5) {
+          if (running < 100) {
             clearInterval(int);
             resolve();
           }

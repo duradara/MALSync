@@ -2,6 +2,7 @@ import SettingsGeneral from './settings-general.vue';
 import ColorPreview from '../color-preview.vue';
 import { ConfObj } from '../../../_provider/definitions';
 import { themeOptions } from '../themes';
+import { etc } from './settings-structure-etc';
 
 export const theming: ConfObj[] = [
   {
@@ -75,4 +76,5 @@ export const theming: ConfObj[] = [
     condition: () => api.settings.get('theme') === 'custom',
     component: ColorPreview,
   },
+  ...etc,
 ];

@@ -1,11 +1,6 @@
 <template>
-  <div class="designed-wrapper">
-    <div class="designed">
-      <MediaLink href="https://geor.gy/">
-        Designed by
-        <div class="logotype">geor<span class="logotype_dot">.</span>gy</div>
-      </MediaLink>
-    </div>
+  <div class="">
+
   </div>
 </template>
 

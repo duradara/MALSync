@@ -1196,7 +1196,7 @@
         "description": "ETC"
     },
     "settings_tracking": {
-        "message": "Tracking",
+        "message": "Images",
         "description": "tracking settings header"
     },
     "settings_tracking_disabled": {
